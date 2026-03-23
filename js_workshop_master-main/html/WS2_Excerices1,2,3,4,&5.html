@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS-WS2_1,2,3,4,5</title>
+</head> 
+<body>
+   
+
+    <h1>Excerice 1</h1> <br />
+     <p> <em><strong>"If I had nine hours to chop down a tree, I'd spend the first six sharpening my ax."</strong> <br />
+		  -- Abraham Lincoln</em></p> <br/>
+  
+       <h1>Excerice 2</h1> <br />
+       <div id="output"></div>
+    <script>
+        function repeatingText() {
+            // choo
+            const container = document.getElementById("output");
+            const viesti = "Hello World!"
+
+            // Loop wich runs30 times
+            for (let i = 0; i < 30; i++) {
+                container.innerHTML += viesti;
+            }
+        }
+
+        // calls the function to display the text on the page
+        repeatingText();
+    </script> <br/>
+
+    <h1>Excerice 3</h1> <br />
+    <button id="go">Check browser & go</button>
+    <p id="info"></p>
+
+    <script>
+        // Select the button via the DOM interface
+        const button = document.getElementById('go');
+
+        button.addEventListener('click', () => {
+            // 1. Using the navigator object (BOM)
+            const ua = navigator.userAgent;
+            const isMozilla = ua.includes('Mozilla');
+
+            // Display information to the user
+            document.getElementById('info').textContent = 'Mozilla detected? ' + isMozilla;
+
+            // 2. Using the location object (BOM) for redirection
+            if (isMozilla) {
+                // If 'Mozilla' is found, go to mozilla.org
+                window.location.href = 'https://www.mozilla.org';
+            } else {
+                // Otherwise, go to another site
+                window.location.href = 'https://www.example.com';
+            }
+        });
+    </script> <br/>
+
+    <h1>Excerice 4</h1> <br />
+    <h1 id="message">Processing...</h1>
+
+    <script>
+        // The confirm() dialog is a BOM method that returns a boolean
+        const isStudent = confirm("Are you a student?");
+
+        // Select the heading element to display the result
+        const display = document.getElementById("message");
+
+        if (isStudent) {
+            // User clicked OK (true)
+            display.textContent = "Welcome student";
+        } else {
+            // User clicked Cancel (false)
+            display.textContent = "Sorry, this page is for students only";
+        }
+    </script> <br/>
+
+    <h1>Excerice 5</h1> <br />
+
+<img id="pic" src="https://farm4.staticflickr.com/3691/11268502654_f28f05966c_m.jpg" width="240" alt="random image">
+<button id="rand">Random image</button>
+
+
+<script>
+  const images = [
+    'https://farm4.staticflickr.com/3691/11268502654_f28f05966c_m.jpg',
+    'https://farm1.staticflickr.com/33/45336904_1aef569b30_n.jpg',
+    'https://farm6.staticflickr.com/5211/5384592886_80a512e2c9.jpg'
+  ];
+
+  function showRandomImage() {
+    const index = Math.floor(Math.random() * images.length);
+    document.getElementById('pic').src = images[index];
+  }
+
+  document.getElementById('rand').addEventListener('click', showRandomImage);
+
+  // show one image when page loads
+  showRandomImage();
+</script>
+
+</body>
+</html>
