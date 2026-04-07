@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function for Events</title>
+</head>
+<body>
+    <h1>Named Functions for Events</h1>
+    <p>What is the name(s) of our browser?</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+        function myFunction() {
+        //Use BOM navigator to read browser info changed navigator.userAgent gives detailed info about browsers
+            const msg= "User Agent: " + navigator.userAgent;
+        
+        // Show output whitout overwriting the wholw page
+            document.getElementById("demo").innerHTML = msg;
+        }
+    </script>
+               
+</body>
+</html>
