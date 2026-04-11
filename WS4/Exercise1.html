@@ -1,0 +1,22 @@
+<!DOCTYPE html> <!-- Declares HTML5 for modern browser support -->
+<html lang="en"> <!-- Sets language for accessibility and SEO -->
+<head>
+    <meta charset="UTF-8"> <!-- Supports special characters like ä, ö, ñ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes page responsive on mobile -->
+    <title>DOM Introduction</title> <!-- Browser tab title -->
+</head>
+<body>
+    <h1 id="main-title">Welcome to DOM Scripting!</h1> <!-- Unique ID for JavaScript to find this element -->
+    <p class="intro-text">This is an introductory paragraph.</p> <!-- Class for selecting multiple elements -->
+
+    <script>
+        // Access element by its unique ID
+        const titleElement = document.getElementById('main-title'); // Returns one element
+        console.log('Title Element:', titleElement.textContent); // Logs text content
+
+        // Access elements by class name (returns collection)
+        const introParagraphs = document.getElementsByClassName('intro-text'); // HTMLCollection
+        console.log('Intro Paragraphs:', introParagraphs[0].textContent); // Access first item with [0]
+    </script>
+</body>
+</html>
